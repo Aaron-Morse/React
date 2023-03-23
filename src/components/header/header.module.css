@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  position: relative;
+}
+
+.logo {
+  margin-left: 1rem;
+  margin-right: auto;
+}

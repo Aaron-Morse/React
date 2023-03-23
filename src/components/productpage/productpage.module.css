@@ -1,0 +1,53 @@
+.wrapper {
+  margin: 24px;
+}
+
+.brand {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ff7e1b;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d2026;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #69707d;
+  margin-bottom: 24px;
+}
+
+.priceWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d2026;
+  margin-right: 16px;
+}
+
+.discount {
+  font-weight: 700;
+  color: #ff7e1b;
+  background-color: rgba(255, 126, 27, 0.25);
+  margin-right: auto;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.msrp {
+  font-weight: 700;
+  color: #b6bcc8;
+  text-decoration: line-through;
+}
