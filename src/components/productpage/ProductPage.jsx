@@ -1,9 +1,11 @@
 import styles from "./productpage.module.css";
 import ImageGallery from "../imagegallery/ImageGallery";
 import AddToCart from "../addtocart/AddToCart";
+import product1Thumbnail from "../../assets/images/image-product-1-thumbnail.jpg";
 
 export default function ProductPage() {
   const product = {
+    sku: 12345,
     brand: "Sneaker Company",
     title: "Fall Limited Edition Sneakers",
     description:
@@ -11,6 +13,7 @@ export default function ProductPage() {
     price: "125.00",
     msrp: "250.00",
     discount: "50",
+    image: product1Thumbnail,
   };
 
   function ProductDetails() {

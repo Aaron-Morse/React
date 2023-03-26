@@ -3,17 +3,17 @@ import Header from "./components/header/Header";
 import ProductPage from "./components/productpage/ProductPage";
 import "./App.css";
 
-export const ProductContext = createContext();
+export const CartContext = createContext();
 
 function App() {
-  const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   return (
     <div className="App">
-      <ProductContext.Provider value={{ products, setProducts }}>
+      <CartContext.Provider value={{ cart, setCart }}>
         <Header />
         <ProductPage />
-      </ProductContext.Provider>
+      </CartContext.Provider>
     </div>
   );
 }

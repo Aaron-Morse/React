@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./navigation.module.css";
 import menuIcon from "../../assets/images/icon-menu.svg";
 import closeIcon from "../../assets/images/icon-close.svg";
 
 export default function Navigation() {
   const [showNavigation, setShowNavigation] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = showNavigation ? "hidden" : "auto";
+  }, [showNavigation]);
 
   function toggleShowNavigation() {
     setShowNavigation((prevValue) => !prevValue);
