@@ -20,18 +20,6 @@ export default function AddToCart({ product }) {
     }
   }
 
-  // function addProductToCart() {
-  //   if (!cart.find((item) => item.sku === product.sku)) {
-  //     return setCart([...cart, { ...product, quantity }]);
-  //   }
-  //   const newCart = cart.map((item) => {
-  //     return item.sku === product.sku
-  //       ? { ...item, quantity: item.quantity + quantity }
-  //       : item;
-  //   });
-  //   setCart(newCart);
-  // }
-
   function addProductToCart() {
     let updateCart;
     if (cart.find((item) => item.sku === product.sku)) {
