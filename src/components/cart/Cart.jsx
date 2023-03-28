@@ -47,21 +47,22 @@ export default function Cart() {
     );
   }
 
-  console.log(cart);
   function toggleShowCart() {
     setShowCart((prevValue) => !prevValue);
   }
 
   return (
     <>
-      <button className={styles.cartBtn} onClick={toggleShowCart}>
-        <img src={cartIcon} />
-      </button>
-      {cart.length > 0 && (
-        <div className={styles.cartBtnQuantity}>
-          {cart.reduce((total, item) => total + item.quantity, 0)}
-        </div>
-      )}
+      <div className={styles.cartWrapper}>
+        <button className={styles.cartBtn} onClick={toggleShowCart}>
+          <img src={cartIcon} className={styles.cartBtnIcon} />
+        </button>
+        {cart.length > 0 && (
+          <div className={styles.cartBtnQuantity}>
+            {cart.reduce((total, item) => total + item.quantity, 0)}
+          </div>
+        )}
+      </div>
       {showCart && <CartModal />}
     </>
   );
