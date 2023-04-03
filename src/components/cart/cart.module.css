@@ -109,7 +109,18 @@
     margin-right: 46px;
   }
 
-  .cartBtn {
+  .cartBtn:hover {
     cursor: pointer;
+  }
+
+  .cartBtn:hover .cartIcon {
+    fill: #1d2026;
+  }
+
+  .cartModal {
+    width: 360px;
+    top: 80%;
+    right: -5%;
+    left: auto;
   }
 }
