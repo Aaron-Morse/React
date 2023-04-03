@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 24px;
   position: relative;
 }
@@ -8,4 +9,21 @@
 .logo {
   margin-left: 1rem;
   margin-right: auto;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .wrapper {
+    height: 84px;
+    max-width: 1110px;
+    margin: 28px auto 90px;
+    padding: 0;
+    border-bottom: 1px solid #e4e9f2;
+  }
+
+  .logo {
+    margin-left: 0;
+    margin-right: 56px;
+    order: -1;
+  }
 }

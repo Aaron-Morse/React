@@ -16,21 +16,29 @@ export default function Navigation() {
 
   return (
     <>
-      <img src={menuIcon} onClick={toggleShowNavigation} />
-      {showNavigation && (
-        <nav>
-          <ul>
-            <li>
-              <img src={closeIcon} onClick={toggleShowNavigation} />
-            </li>
-            <li>Collections</li>
-            <li>Men</li>
-            <li>Women</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-      )}
+      <img
+        src={menuIcon}
+        onClick={toggleShowNavigation}
+        className={styles.hamburger}
+      />
+      <nav
+        className={
+          showNavigation
+            ? `${styles.navigation} ${styles.expanded}`
+            : styles.navigation
+        }
+      >
+        <ul className={styles.navigationItemsWrapper}>
+          <li className={styles.closeIcon}>
+            <img src={closeIcon} onClick={toggleShowNavigation} />
+          </li>
+          <li className={styles.navigationItem}>Collections</li>
+          <li className={styles.navigationItem}>Men</li>
+          <li className={styles.navigationItem}>Women</li>
+          <li className={styles.navigationItem}>About</li>
+          <li className={styles.navigationItem}>Contact</li>
+        </ul>
+      </nav>
     </>
   );
 }
