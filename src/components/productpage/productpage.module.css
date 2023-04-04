@@ -1,4 +1,4 @@
-.wrapper {
+.productDetailsWrapper {
   margin: 24px;
 }
 
@@ -28,6 +28,7 @@
 .priceWrapper {
   display: flex;
   align-items: center;
+  margin-bottom: 24px;
 }
 
 .price {
@@ -50,4 +51,42 @@
   font-weight: 700;
   color: #b6bcc8;
   text-decoration: line-through;
+}
+
+@media only screen and (min-width: 992px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 125px;
+    max-width: 1015px;
+    margin: 0 auto;
+  }
+
+  .productDetailsWrapper {
+    margin: 0;
+  }
+
+  .brand {
+    margin-bottom: 27px;
+  }
+
+  .title {
+    font-size: 44px;
+    margin-bottom: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .priceWrapper {
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .msrp {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

@@ -18,7 +18,7 @@ export default function ProductPage() {
 
   function ProductDetails() {
     return (
-      <div className={styles.wrapper}>
+      <div className={styles.productDetailsWrapper}>
         <p className={styles.brand}>{product.brand}</p>
         <h1 className={styles.title}>{product.title}</h1>
         <p className={styles.description}>{product.description}</p>
@@ -27,15 +27,15 @@ export default function ProductPage() {
           <span className={styles.discount}>{product.discount}%</span>
           <span className={styles.msrp}>${product.msrp}</span>
         </div>
+        <AddToCart product={product} />
       </div>
     );
   }
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <ImageGallery />
       <ProductDetails />
-      <AddToCart product={product} />
-    </>
+    </div>
   );
 }

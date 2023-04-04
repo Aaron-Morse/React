@@ -1,6 +1,4 @@
 .wrapper {
-  margin-right: 24px;
-  margin-left: 24px;
   margin-bottom: 88px;
 }
 
@@ -45,4 +43,25 @@
   content: url(../../assets/images/icon-cart.svg);
   filter: brightness(0) invert(1);
   margin-right: 16px;
+}
+
+@media only screen and (min-width: 992px) {
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: auto;
+    height: 56px;
+  }
+  .quantitywrapper {
+    padding: 16px;
+    margin-bottom: auto;
+  }
+
+  .quantitywrapper {
+    width: 30%;
+  }
+
+  .addtocart {
+    width: 65%;
+  }
 }
