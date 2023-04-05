@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./imagegallery.module.css";
-import next from "../../assets/images/icon-next.svg";
-import previous from "../../assets/images/icon-previous.svg";
+import nextIcon from "../../assets/images/icon-next.svg";
+import previousIcon from "../../assets/images/icon-previous.svg";
 import product1 from "../../assets/images/image-product-1.jpg";
 import product1Thumbnail from "../../assets/images/image-product-1-thumbnail.jpg";
 import product2 from "../../assets/images/image-product-2.jpg";
@@ -20,35 +20,60 @@ const productThumbnailImages = [
 ];
 
 export default function ImageGallery() {
-  const [index, setIndex] = useState(0);
+  const [imageIndex, setImageIndex] = useState(0);
 
   function previousImage() {
-    setIndex((prevValue) =>
+    setImageIndex((prevValue) =>
       prevValue === 0 ? productImages.length - 1 : prevValue - 1
     );
   }
 
   function nextImage() {
-    setIndex((prevValue) =>
+    setImageIndex((prevValue) =>
       prevValue === productImages.length - 1 ? 0 : prevValue + 1
     );
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.imageGalleryWrapper}>
       <button
         className={`${styles.button} ${styles.previous}`}
         onClick={previousImage}
       >
-        <img src={previous} className={styles.chevron} />
+        <img src={previousIcon} className={styles.chevron} />
       </button>
-      <img src={productImages[index]} className={styles.product} />
       <button
         className={`${styles.button} ${styles.next}`}
         onClick={nextImage}
       >
-        <img src={next} className={styles.chevron} />
+        <img src={nextIcon} className={styles.chevron} />
       </button>
+      <img
+        src={productImages[imageIndex]}
+        className={styles.productImage}
+      />
+      <div className={styles.thumbnailsWrapper}>
+        {productThumbnailImages.map((image, i) => (
+          <div
+            key={i}
+            className={
+              i === imageIndex
+                ? `${styles.thumbnailWrapper} ${styles.selectedWrapper}`
+                : `${styles.thumbnailWrapper}`
+            }
+          >
+            <img
+              src={image}
+              className={
+                i === imageIndex
+                  ? `${styles.thumbnailImage} ${styles.selectedThumbnail}`
+                  : `${styles.thumbnailImage}`
+              }
+              onClick={() => setImageIndex(i)}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

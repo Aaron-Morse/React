@@ -56,15 +56,15 @@
 @media only screen and (min-width: 992px) {
   .wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 125px;
     max-width: 1015px;
     margin: 0 auto;
   }
 
   .productDetailsWrapper {
     margin: 0;
+    width: 45%;
   }
 
   .brand {

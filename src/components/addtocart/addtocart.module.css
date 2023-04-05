@@ -61,7 +61,16 @@
     width: 30%;
   }
 
+  .button {
+    cursor: pointer;
+  }
+
   .addtocart {
     width: 65%;
+    cursor: pointer;
+  }
+
+  .addtocart:hover {
+    background-color: #ffab6a;
   }
 }

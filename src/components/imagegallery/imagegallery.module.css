@@ -1,11 +1,15 @@
-.wrapper {
+.imageGalleryWrapper {
   height: 300px;
   position: relative;
   overflow: hidden;
 }
 
-.product {
+.productImage {
   max-width: 100%;
+}
+
+.thumbnailsWrapper {
+  display: none;
 }
 
 .button {
@@ -33,4 +37,51 @@
 .next {
   right: 3%;
   padding-left: 3px;
+}
+
+@media only screen and (min-width: 992px) {
+  .imageGalleryWrapper {
+    width: 45%;
+    height: 100%;
+  }
+
+  .productImage {
+    border-radius: 15px;
+    margin-bottom: 32px;
+  }
+
+  .previous,
+  .next {
+    display: none;
+  }
+
+  .thumbnailsWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .thumbnailWrapper {
+    width: 20%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .thumbnailImage {
+    width: 100%;
+    height: 100%;
+  }
+
+  .thumbnailImage:hover {
+    cursor: pointer;
+    opacity: 0.75;
+  }
+
+  .selectedWrapper {
+    border: 2px solid #ff7e1b;
+  }
+
+  .selectedThumbnail {
+    opacity: 0.75;
+  }
 }
