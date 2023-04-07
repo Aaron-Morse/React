@@ -19,7 +19,11 @@ const productThumbnailImages = [
   product4Thumbnail,
 ];
 
-export default function ImageGallery() {
+export default function ImageGallery({
+  setShowModal,
+  showModal,
+  showInModal,
+}) {
   const [imageIndex, setImageIndex] = useState(0);
 
   function previousImage() {
@@ -34,8 +38,18 @@ export default function ImageGallery() {
     );
   }
 
+  function isDesktop() {
+    return window.innerWidth >= 992;
+  }
+
   return (
-    <div className={styles.imageGalleryWrapper}>
+    <div
+      className={
+        showInModal
+          ? `${styles.imageGalleryWrapper} ${styles.imageGalleryWrapperInModal}`
+          : `${styles.imageGalleryWrapper}`
+      }
+    >
       <button
         className={`${styles.button} ${styles.previous}`}
         onClick={previousImage}
@@ -49,10 +63,21 @@ export default function ImageGallery() {
         <img src={nextIcon} className={styles.chevron} />
       </button>
       <img
+        onClick={() => {
+          if (isDesktop() && showModal !== true) {
+            setShowModal(true);
+          }
+        }}
         src={productImages[imageIndex]}
         className={styles.productImage}
       />
-      <div className={styles.thumbnailsWrapper}>
+      <div
+        className={
+          showInModal
+            ? `${styles.thumbnailsWrapper} ${styles.thumbnailsWrapperInModal}`
+            : `${styles.thumbnailsWrapper}`
+        }
+      >
         {productThumbnailImages.map((image, i) => (
           <div
             key={i}

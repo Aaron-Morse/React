@@ -1,9 +1,13 @@
+import { useState, memo } from "react";
 import styles from "./productpage.module.css";
 import ImageGallery from "../imagegallery/ImageGallery";
+import Modal from "../modal/Modal";
 import AddToCart from "../addtocart/AddToCart";
 import product1Thumbnail from "../../assets/images/image-product-1-thumbnail.jpg";
 
-export default function ProductPage() {
+function ProductPage() {
+  const [showModal, setShowModal] = useState(false);
+
   const product = {
     sku: 12345,
     brand: "Sneaker Company",
@@ -34,8 +38,20 @@ export default function ProductPage() {
 
   return (
     <div className={styles.wrapper}>
-      <ImageGallery />
+      <ImageGallery
+        setShowModal={setShowModal}
+        showModal={showModal}
+      />
       <ProductDetails />
+      <Modal setShowModal={setShowModal} showModal={showModal}>
+        <ImageGallery
+          showInModal={true}
+          setShowModal={setShowModal}
+          showModal={showModal}
+        />
+      </Modal>
     </div>
   );
 }
+
+export default memo(ProductPage);

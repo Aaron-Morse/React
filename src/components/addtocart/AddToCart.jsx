@@ -7,7 +7,6 @@ import styles from "./addtocart.module.css";
 
 export default function AddToCart({ product }) {
   const [quantity, setQuantity] = useState(1);
-
   const { cart, setCart } = useContext(CartContext);
 
   function increment() {

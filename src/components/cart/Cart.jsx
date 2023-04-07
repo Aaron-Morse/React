@@ -1,12 +1,26 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext, useRef, memo } from "react";
 import { CartContext } from "../../App";
 import styles from "./cart.module.css";
 import deleteIcon from "../../assets/images/icon-delete.svg";
 
-export default function Cart() {
+function Cart() {
   const [showCart, setShowCart] = useState(false);
-
   const { cart, setCart } = useContext(CartContext);
+  const divRef = useRef();
+
+  // useEffect(() => {
+  //   const handleClick = (event) => {
+  //     if (divRef.current && !divRef.current.contains(event.target)) {
+  //       setShowCart(false);
+  //     }
+  //   };
+
+  //   window.addEventListener("click", handleClick);
+
+  //   return () => {
+  //     window.removeEventListener("click", handleClick);
+  //   };
+  // }, [showCart]);
 
   function populateCart() {
     return cart.map((item) => (
@@ -51,7 +65,7 @@ export default function Cart() {
   }
 
   return (
-    <>
+    <div ref={divRef}>
       <div className={styles.cartWrapper}>
         <button className={styles.cartBtn} onClick={toggleShowCart}>
           <svg
@@ -68,12 +82,17 @@ export default function Cart() {
           </svg>
         </button>
         {cart.length > 0 && (
-          <div className={styles.cartBtnQuantity}>
+          <div
+            className={styles.cartBtnQuantity}
+            onClick={toggleShowCart}
+          >
             {cart.reduce((total, item) => total + item.quantity, 0)}
           </div>
         )}
       </div>
       {showCart && <CartModal />}
-    </>
+    </div>
   );
 }
+
+export default memo(Cart);
