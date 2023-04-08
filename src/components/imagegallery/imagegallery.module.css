@@ -43,6 +43,7 @@
   .imageGalleryWrapper {
     width: 45%;
     height: 100%;
+    overflow: visible;
   }
 
   .productImage {
@@ -96,5 +97,26 @@
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+  }
+
+  .button:hover svg path {
+    stroke: #ff7e1b;
+  }
+
+  .previousModal,
+  .nextModal {
+    display: block;
+    top: 35%;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+  }
+
+  .previousModal {
+    left: -5%;
+  }
+
+  .nextModal {
+    right: -5%;
   }
 }

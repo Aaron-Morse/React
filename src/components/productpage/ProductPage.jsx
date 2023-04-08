@@ -37,7 +37,7 @@ function ProductPage() {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <main className={styles.wrapper}>
       <ImageGallery
         setShowModal={setShowModal}
         showModal={showModal}
@@ -50,7 +50,7 @@ function ProductPage() {
           showModal={showModal}
         />
       </Modal>
-    </div>
+    </main>
   );
 }
 

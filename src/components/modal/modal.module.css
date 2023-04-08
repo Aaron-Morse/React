@@ -32,8 +32,12 @@
   scale: 1.5;
 }
 
-.closeBtn path:hover {
+.closeBtn path {
   fill: white;
+}
+
+.closeBtn path:hover {
+  fill: #ff7e1b;
 }
 
 @media only screen and (max-width: 992px) {
