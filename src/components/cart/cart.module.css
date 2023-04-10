@@ -125,7 +125,8 @@
     left: auto;
   }
 
-  .checkout:hover {
-    background-color: #ffab6a;
+  .checkout:hover,
+  .delete:hover {
+    cursor: pointer;
   }
 }

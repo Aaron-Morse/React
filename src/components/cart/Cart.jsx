@@ -7,6 +7,7 @@ function Cart() {
   const [showCart, setShowCart] = useState(false);
   const { cart, setCart } = useContext(CartContext);
   const divRef = useRef();
+  const buttonRef = useRef();
 
   // useEffect(() => {
   //   const handleClick = (event) => {
