@@ -8,19 +8,19 @@ function Cart() {
   const { cart, setCart } = useContext(CartContext);
   const divRef = useRef();
 
-  useEffect(() => {
-    const handleClick = (event) => {
-      if (divRef.current && !divRef.current.contains(event.target)) {
-        setShowCart(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleClick = (event) => {
+  //     if (divRef.current && !divRef.current.contains(event.target)) {
+  //       setShowCart(false);
+  //     }
+  //   };
 
-    window.addEventListener("click", handleClick);
+  //   window.addEventListener("click", handleClick);
 
-    return () => {
-      window.removeEventListener("click", handleClick);
-    };
-  }, [showCart]);
+  //   return () => {
+  //     window.removeEventListener("click", handleClick);
+  //   };
+  // }, [showCart]);
 
   function populateCart() {
     return cart.map((item) => (
