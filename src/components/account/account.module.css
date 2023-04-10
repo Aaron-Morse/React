@@ -7,10 +7,10 @@
   .wrapper {
     width: 52px;
     height: 52px;
+    border-radius: 50%;
   }
 
   .wrapper:hover {
-    border-radius: 50%;
     border: 2px solid #ff7e1b;
     cursor: pointer;
   }
