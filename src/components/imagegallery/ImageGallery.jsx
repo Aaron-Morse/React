@@ -102,6 +102,7 @@ export default function ImageGallery({
         }}
         src={productImages[imageIndex]}
         className={styles.productImage}
+        alt="Main product image"
       />
       <div
         className={
@@ -127,6 +128,7 @@ export default function ImageGallery({
                   : `${styles.thumbnailImage}`
               }
               onClick={() => setImageIndex(i)}
+              alt={`Thumbnail image ${i + 1}`}
             />
           </div>
         ))}
