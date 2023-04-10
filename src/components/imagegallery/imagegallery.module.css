@@ -1,12 +1,11 @@
 .imageGalleryWrapper {
-  width: 100%;
-  max-height: 300px;
+  height: 300px;
   position: relative;
   overflow: hidden;
 }
 
 .productImage {
-  width: 100%;
+  max-width: 100%;
 }
 
 .thumbnailsWrapper {
