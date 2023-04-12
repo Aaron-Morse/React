@@ -50,6 +50,7 @@
   .productImage {
     border-radius: 15px;
     margin-bottom: 32px;
+    cursor: pointer;
   }
 
   .previous,
